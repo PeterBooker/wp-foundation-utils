@@ -20,7 +20,7 @@ Top Bar Menu:
 wpfu_top_bar_menu(
     'top-bar-menu', // ID
     array( 'theme_location' => 'top-bar-left' ), // Left Side
-	array( 'theme_location' => 'top-bar-right' ), // Right Side
+    array( 'theme_location' => 'top-bar-right' ), // Right Side
 );
 ```
 
