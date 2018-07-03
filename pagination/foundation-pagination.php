@@ -39,11 +39,12 @@ if ( ! function_exists( 'wpfu_pagination' ) ) {
 			)
         );
 
-        print_r( $paginate_links );
-
+        // Setup wrapper
         $before = '<nav aria-label="Pagination">';
         $after  = '</nav>';
 
+        // Replace relevant parts to match Foundation code
+        // TODO: Rewrite to remove need for search/replace
 		$paginate_links = str_replace( "<ul class='page-numbers'>", "<ul class='pagination text-center' role='navigation' aria-label='Pagination'>", $paginate_links );
 		$paginate_links = str_replace( '<li><span class="page-numbers dots">', "<li><a href='#'>", $paginate_links );
 		$paginate_links = str_replace( '</span>', '</a>', $paginate_links );
