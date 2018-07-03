@@ -21,23 +21,25 @@ if ( ! function_exists( 'wpfu_pagination' ) ) {
      * 
      * @return void
      */
-    function wpfu_pagination() {
+    function wpfu_pagination( $args = array() ) {
         global $wp_query;
 
-		$big = PHP_INT_MAX;
+        $big = PHP_INT_MAX;
 
-		$paginate_links = paginate_links(
-			array(
-				'base'      => str_replace( $big, '%#%', html_entity_decode( get_pagenum_link( $big ) ) ),
-				'current'   => max( 1, get_query_var( 'paged' ) ),
-				'total'     => $wp_query->max_num_pages,
-				'mid_size'  => 5,
-				'prev_next' => true,
-				'prev_text' => __( '&laquo; Previous' ),
-				'next_text' => __( 'Next &raquo;' ),
-				'type'      => 'list',
-			)
+        $defaults = array(
+            'base'      => str_replace( $big, '%#%', html_entity_decode( get_pagenum_link( $big ) ) ),
+			'current'   => max( 1, get_query_var( 'paged' ) ),
+			'total'     => $wp_query->max_num_pages,
+			'mid_size'  => 5,
+			'prev_next' => true,
+			'prev_text' => __( '&laquo; Previous' ),
+			'next_text' => __( 'Next &raquo;' ),
+			'type'      => 'list',
         );
+
+        $args = wp_parse_args( $args, $defaults );
+
+		$paginate_links = paginate_links( $args );
 
         // Setup wrapper
         $before = '<nav aria-label="Pagination">';
