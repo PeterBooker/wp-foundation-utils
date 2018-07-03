@@ -2,6 +2,8 @@
 
 A collection of functions and classes to make using Foundation for Sites with WordPress a little easier.
 
+This is designed so that you can use the entire repo as a standard Plugin, each file inside a folder as an MU (Must Use) Plugin or simply copy the code. Whatever is right for you.
+
 ## Menus
 
 All menu's require you to pass args containing one of `menu` or `theme-location` so that it knows which menu to display.
