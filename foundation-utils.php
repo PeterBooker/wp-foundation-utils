@@ -14,4 +14,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'We\'re sorry, but you can not directly access this file.' );
 }
 
-require_once( dirname( __FILE__ ) . '/menu-walkers/foundation-top-bar.php' );
+require_once( dirname( __FILE__ ) . '/menus/foundation-menus.php' );
+require_once( dirname( __FILE__ ) . '/pagination/foundation-pagination.php' );
